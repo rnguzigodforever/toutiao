@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+    </style>
+</head>
+<body>
+    <script>
+        // function add(m){
+        //     return function foo(n){
+        //         console.log(m+n);
+        //     } 
+        // }
+        // add(2)(5)
+
+        // ----------------
+        // var foo=1
+        // function bar(){
+          
+        //     console.log(!foo,  typeof(!foo));
+        //     if(!foo){
+        //         var foo=10
+        //     }
+        //  console.log(foo);
+        // }
+        // bar()
+
+
+
+    //     const[a,...b]=[1,2,3,4,5] //1
+    //     // const[...b,a]=[1,2,3,4,5] //报错 ...必须是在最后才可以用
+    //     // const[a,...b]=[] // undefined
+    // console.log(a);
+    
+    // 防抖  在单位时间内反复触发事件只能执行一次
+    function debounce(fn,delay){
+        let timer =null
+        return function(){
+            if(timer){
+                clearTimeout(timer)
+            }
+            setTimeout(fn,delay)
+        }
+    } 
+    // 节流 触发事件的时间间隔
+    function throttle(fn,delay){
+        let flag =true
+        return function(){
+            if(!flag){
+                return false
+            }
+            flag= false
+            setTimeout(()=>{
+                fn()
+                flag=true
+            },delay)
+        }
+    } 
+    </script>
+</body>
+</html>
